@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Second implements InterMethods{
 static int inHandSalary,press, OTP,interest, loanAmount,EMI, eligibility, tenure, doc, principal, rateInPercent = 10,totalInterestPayable;
 Scanner sc = new Scanner(System.in);
+User_Validation uv = new User_Validation();
     public void welcomePage() {
         System.out.println("Welcome to avail Personal Loan");
         System.out.println("-------------------------------");
@@ -20,17 +21,20 @@ Scanner sc = new Scanner(System.in);
         System.out.println("The maximum loan amount is 200000 and the minimum loan amount is 100000");
     }
     
-    public void OTPDetails()
-    {
-    	if(press == 1 || press == 2)
-    	{
-    	System.out.println("Enter the OTP ");
-    	OTP = sc.nextInt();
-    	}
-    }
+    
 
     @Override
     public void eligibility(String name, String city, String phNumber, String pan, int age, int sal, int expense) {
+    	if(press == 1 || press == 2)
+    	{
+    		
+    		double rand = (int)Math.floor(Math.random()*(9999-1111+1)+1111);
+            uv.setOtp(rand);
+            System.out.println(uv.getOtp());
+            System.out.println("Enter the Otp: ");
+            int check = sc.nextInt();
+            if (check==rand) {
+            	OTP =1;
         if (city.equalsIgnoreCase("india")) {
             int inHandSalary;
             System.out.println();
@@ -68,6 +72,18 @@ Scanner sc = new Scanner(System.in);
             System.out.println("you should reside in INDIA for applying personal loan");
         }
     }
+            else
+            {
+            	System.out.println("Wrong OTP plz try again");
+            }
+    	}
+    	else
+    	{
+    		System.out.println("Invalid Option");
+    	}
+    	
+    }
+    
 
 
 

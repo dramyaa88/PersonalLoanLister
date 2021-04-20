@@ -18,6 +18,7 @@ public class First extends Second{
         
         if(press == 2)
         {
+        	
         System.out.println("Enter your Name");
         String name = sc.nextLine();
         obj2.setName(name);
@@ -68,11 +69,12 @@ public class First extends Second{
         obj2.setExpense(expense);
         
         obj.eligibility(obj2.getName(), obj2.getCity(), obj2.getPhonenumber(), obj2.getPan(), obj2.getAge(),obj2.getSal(), obj2.getExpense());
-        
+        if(OTP == 1)
+        {
+        obj3.loanDetails();
         obj3.endMessage();
-        
-        
         obj6.selectDepartment();
+        }
         }
         else if(press == 1)
         {
