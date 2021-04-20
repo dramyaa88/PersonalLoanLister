@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Four extends Second implements InterMethods{
 	@Override
     public void loanDetails() {
+		
         if (eligibility == 1) {
             System.out.println("Enter the loan Amount");
             Scanner sc = new Scanner(System.in);
@@ -16,8 +17,8 @@ public class Four extends Second implements InterMethods{
             try
             {
                 totalInterestPayable = (principal * tenure * rateInPercent) / 100;
-                //EMI = (principal + totalInterestPayable) / tenure;
-                System.out.println("Interest :"+totalInterestPayable);
+                EMI = (principal + totalInterestPayable) / tenure;
+                System.out.println("Interest :"+EMI);
                 System.out.println("Total Amount :"+(principal+EMI));
             }catch(ArithmeticException e)
             {
