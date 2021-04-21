@@ -1,19 +1,47 @@
 
 public class Third {
-	private String name;
+	private static String name;
     private static String city;
     private static String Phonenumber;
-    private String pan;
-    private int sal;
+    private static String pan;
+    private static int sal;
     private int ex;
-    private int expense;
+    private static int expense;
     private static int age;
     private static String uid;
     private static String pwd;
+    private static int loanAmount;
+    private static int tenure;
 
-    public static String getUid() {
+    public static int getLoanAmount() {
+		return loanAmount;
+	}
+
+
+
+	public void setLoanAmount(int loanAmount) {
+		Third.loanAmount = loanAmount;
+	}
+
+
+
+	public static int getTenure() {
+		return tenure;
+	}
+
+
+
+	public void setTenure(int tenure) {
+		Third.tenure = tenure;
+	}
+
+
+
+	public static String getUid() {
 		return uid;
 	}
+
+	
 
 	public void setUid(String uid) {
 		this.uid = uid;
@@ -27,7 +55,7 @@ public class Third {
 		this.pwd = pwd;
 	}
 
-	public String getName() {
+	public static String getName() {
         return name;
     }
 
@@ -51,7 +79,7 @@ public class Third {
         Phonenumber = phonenumber;
     }
 
-    public String getPan() {
+    public static String getPan() {
         return pan;
     }
 
@@ -59,7 +87,7 @@ public class Third {
         this.pan = pan;
     }
 
-    public int getSal() {
+    public static int getSal() {
         return sal;
     }
 
@@ -75,7 +103,7 @@ public class Third {
         this.ex = ex;
     }
 
-    public int getExpense() {
+    public static int getExpense() {
         return expense;
     }
 
@@ -90,5 +118,9 @@ public class Third {
     public void setAge(int age) {
         this.age = age;
     }
+
+
+
+	
 
 }
