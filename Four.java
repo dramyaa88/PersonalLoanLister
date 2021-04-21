@@ -1,17 +1,8 @@
-import java.util.Scanner;
-
-
-
 public class Four extends Second implements InterMethods{
-	@Override
-    public void loanDetails() {
-		
-        if (eligibility == 1) {
-            System.out.println("Enter the loan Amount");
-            Scanner sc = new Scanner(System.in);
-            loanAmount = sc.nextInt();
-            System.out.println("Enter the tenure in months");
-            tenure = sc.nextInt();
+	
+public void loanDetails(int loanAmount,int tenure) {
+	
+		if (eligibility == 1) {
             principal =loanAmount;
             System.out.println(principal);
             try
@@ -24,16 +15,16 @@ public class Four extends Second implements InterMethods{
             {
             	e.printStackTrace();
             }
+		}
                 
+		
+	}
 
-        }
 
-    }
-
-    public void endMessage() {
-      
-            System.out.println("You successfully applied for the loan");
-            System.out.println("Have a nice day");
-        
-    }
+	
+	public void endMessage() {
+		System.out.println("You successfully applied for the loan");
+        System.out.println("Have a nice day");
+		
+	}
 }
