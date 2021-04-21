@@ -3,9 +3,14 @@ import java.util.Scanner;
 
 
 public class Second implements InterMethods{
-static int inHandSalary,press, OTP,interest, loanAmount,EMI, eligibility, tenure, doc, principal, rateInPercent = 10,totalInterestPayable;
+	
+static int inHandSalary,check,press, OTP,interest, EMI, eligibility, doc, principal, rateInPercent = 10,totalInterestPayable;
+
+
+Third obj2 = new Third();
 Scanner sc = new Scanner(System.in);
 User_Validation uv = new User_Validation();
+
     public void welcomePage() {
         System.out.println("Welcome to avail Personal Loan");
         System.out.println("-------------------------------");
@@ -27,12 +32,12 @@ User_Validation uv = new User_Validation();
     public void eligibility(String name, String city, String phNumber, String pan, int age, int sal, int expense) {
     	if(press == 1 || press == 2)
     	{
-    		
+//    		
     		double rand = (int)Math.floor(Math.random()*(9999-1111+1)+1111);
             uv.setOtp(rand);
             System.out.println(uv.getOtp());
             System.out.println("Enter the Otp: ");
-            int check = sc.nextInt();
+            check = sc.nextInt();
             if (check==rand) {
             	OTP =1;
         if (city.equalsIgnoreCase("india")) {
@@ -57,8 +62,20 @@ User_Validation uv = new User_Validation();
                     int doc = sc.nextInt();
                     if (doc == 1) {
                         System.out.println("Proceed Further");
+                        
+                        System.out.println("Enter your loan Amount");
+                        int loanAmount = sc.nextInt();
+                        sc.nextLine();
+                        obj2.setLoanAmount(loanAmount);
+                        
+                        System.out.println("Enter your tenure in months");
+                        int tenure = sc.nextInt();
+                        sc.nextLine();
+                        obj2.setTenure(tenure);
+                        
                         Four obj = new Four();
-                        obj.loanDetails();
+                        obj.loanDetails(obj2.getLoanAmount(), obj2.getTenure());
+                        
                     } else {
                         System.out.println("document  needed");
                     }
@@ -83,16 +100,15 @@ User_Validation uv = new User_Validation();
     	}
     	
     }
-    
-
 
 
 
 	@Override
-	public void loanDetails() {
+	public void loanDetails(int loanAmount, int tenure) {
 		// TODO Auto-generated method stub
 		
 	}
+
 
 
 	@Override
@@ -100,4 +116,7 @@ User_Validation uv = new User_Validation();
 		// TODO Auto-generated method stub
 		
 	}
+    
+
+	
 }
